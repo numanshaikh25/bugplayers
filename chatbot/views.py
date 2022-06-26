@@ -16,8 +16,8 @@ import google.cloud.dialogflow_v2 as dialogflow
 from google.api_core.exceptions import InvalidArgument
 import json 
 
-credential_path="/Users/numanshaikh/Desktop/INeuron Hackathon/bugplayers/chatbot/private_key.json"
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credential_path
+# credential_path="./INeuron Hackathon/bugplayers/chatbot/private_key.json"
+# os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credential_path
 
 DIALOGFLOW_PROJECT_ID='bugplayers-catm'
 DIALOGFLOW_LANGUAGE_CODE = 'en'
