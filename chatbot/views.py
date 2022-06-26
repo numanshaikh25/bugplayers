@@ -10,14 +10,15 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import permissions
 from django.http import JsonResponse, HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 import os
 import google.cloud.dialogflow_v2 as dialogflow
 from google.api_core.exceptions import InvalidArgument
 import json 
 
-# credential_path="./INeuron Hackathon/bugplayers/chatbot/private_key.json"
-# os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credential_path
+credential_path="private_key.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credential_path
 
 DIALOGFLOW_PROJECT_ID='bugplayers-catm'
 DIALOGFLOW_LANGUAGE_CODE = 'en'
@@ -28,6 +29,7 @@ session = session_client.session_path(DIALOGFLOW_PROJECT_ID, SESSION_ID)
 
 
 @api_view(["POST"])
+@csrf_exempt
 def chatting(request):
     body_unicode = request.body.decode("utf-8")
     body = json.loads(body_unicode)
