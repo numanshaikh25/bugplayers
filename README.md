@@ -9,7 +9,7 @@ Technology Stack : Django and Django Rest Framework
 #### Post a message
 
 ```http
-   POST /api/chat
+   POST /api/chat/
 ```
 
 | Parameter | Type     | Description                |
